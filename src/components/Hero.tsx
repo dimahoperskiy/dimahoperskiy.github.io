@@ -9,17 +9,39 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 
 const Wrapper = styled.section`
   display: flex;
+  height: 100vh;
+  background-color: #d7d7d7;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const AvatarBox = styled.div`
   width: 40%;
   position: relative;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    position: absolute;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    bottom: 5vh;
+    z-index: 1;
+  }
 `;
 
 const Me = styled.img`
   position: absolute;
   bottom: 45px;
   right: 120px;
+
+  @media (max-width: 800px) {
+    position: unset;
+    height: 60vh;
+    width: auto;
+  }
 `;
 
 const InfoBox = styled.div`
@@ -31,10 +53,32 @@ const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 60vh;
+    justify-content: unset;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 72%);
+    align-items: center;
+  }
 `;
 
 const InfoTextWrapper = styled.div`
   padding-left: 25%;
+
+  @media (max-width: 800px) {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+`;
+
+const ButtonsSpace = styled(Space)`
+  margin-top: 100px;
+
+  @media (max-width: 800px) {
+    margin-top: 20px;
+  }
 `;
 
 const Arrow = styled(AiOutlineArrowDown)`
@@ -45,6 +89,11 @@ const Arrow = styled(AiOutlineArrowDown)`
   font-size: 35px;
   color: #00dfff;
   animation: MoveUpDown 1.5s linear infinite;
+
+  @media (max-width: 800px) {
+    z-index: 2;
+    transform: scale(2);
+  }
 
   @keyframes MoveUpDown {
     0%,
@@ -68,13 +117,19 @@ const Hero = () => {
       <InfoBox>
         <InfoTextWrapper>
           <Title level={2}>{t('Hi, I am')}</Title>
-          <Title style={{ marginTop: '30px', marginBottom: '5px' }} level={1}>
+          <Title
+            level={1}
+            style={{
+              marginTop: 30,
+              marginBottom: 5,
+            }}
+          >
             {t('Dmitriy Khoperskiy')}
           </Title>
           <Title style={{ marginTop: '0', fontWeight: 400 }} level={4}>
             {t('Front-end Developer')}
           </Title>
-          <Space size='middle' style={{ marginTop: '100px' }}>
+          <ButtonsSpace size='middle'>
             <Button
               target='_blank'
               href='mailto:dimahoperskiy@gmail.com'
@@ -93,7 +148,7 @@ const Hero = () => {
               size='large'
               icon={<SiTelegram />}
             />
-          </Space>
+          </ButtonsSpace>
         </InfoTextWrapper>
       </InfoBox>
       <Arrow />

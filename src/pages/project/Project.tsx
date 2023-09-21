@@ -22,6 +22,10 @@ import skillsDataObject from '../../utils/skillsDataObject';
 
 const Wrapper = styled.div`
   padding: 40px;
+
+  @media (max-width: 800px) {
+    padding: 40px 5%;
+  }
 `;
 
 const IFrameWrapper = styled.div`
@@ -29,10 +33,53 @@ const IFrameWrapper = styled.div`
   justify-content: center;
 `;
 
+const StyledIFrame = styled.iframe`
+  width: 90%;
+  height: 90vh;
+  border: none;
+
+  @media (max-width: 800px) {
+    width: 95%;
+    height: 80vh;
+  }
+`;
+
 const StyledParagraph = styled(Paragraph)`
   text-align: justify;
   p {
     margin: 5px;
+  }
+`;
+
+const StyledQRCode = styled(QRCode)`
+  margin: 0 auto;
+  overflow: visible;
+
+  @media (max-width: 800px) {
+    padding-bottom: 40px;
+    overflow: visible;
+  }
+`;
+
+const DesktopRow = styled(Row)`
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 10px;
+  margin-bottom: 40px;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+const MobileColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  padding-bottom: 28px;
+
+  @media (min-width: 801px) {
+    display: none;
   }
 `;
 
@@ -106,14 +153,7 @@ const Project: React.FC = () => {
         skillsDataObject.css,
       ];
       AdditionalInfo = () => (
-        <QRCode
-          style={{
-            marginLeft: '20%',
-            paddingBottom: '90px',
-            overflow: 'visible',
-          }}
-          value='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        />
+        <StyledQRCode value='https://www.youtube.com/watch?v=dQw4w9WgXcQ' />
       );
       break;
     case ProjectUrls.chat:
@@ -160,14 +200,7 @@ const Project: React.FC = () => {
           margin: '0 auto',
         }}
       />
-      <Row
-        style={{
-          width: '85%',
-          margin: '0 auto',
-          paddingTop: '10px',
-          marginBottom: '40px',
-        }}
-      >
+      <DesktopRow>
         <Col span={11}>
           <Title
             style={{
@@ -225,20 +258,81 @@ const Project: React.FC = () => {
             {t('Source code')}
           </Button>
         </Col>
-      </Row>
-      <AdditionalInfo />
+        <AdditionalInfo />
+      </DesktopRow>
+      <MobileColumn>
+        <Title
+          style={{
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            fontWeight: 300,
+          }}
+          level={1}
+        >
+          {t('About project')}
+        </Title>
+        <StyledParagraph style={{ marginBottom: '28px' }}>
+          <Trans i18nKey={descriptionMessageId} />
+        </StyledParagraph>
+        <AdditionalInfo />
+        <Divider
+          style={{
+            width: '80%',
+            minWidth: '80%',
+            margin: '0 auto',
+          }}
+        />
+        <Title
+          style={{
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            fontWeight: 300,
+            margin: '28px 0',
+          }}
+          level={1}
+        >
+          {t('Tech stack')}
+        </Title>
+        <Space
+          style={{ marginTop: '6px', marginBottom: '28px' }}
+          size={[8, 16]}
+          wrap
+        >
+          {mappedSkills}
+        </Space>
+        <Button
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            width: '170px',
+            justifyContent: 'center',
+            textDecoration: 'none',
+            marginBottom: '28px',
+          }}
+          target='_blank'
+          href={sourceCodeUrl}
+          size='large'
+          icon={<SiGithub />}
+        >
+          {t('Source code')}
+        </Button>
+        <Divider
+          style={{
+            width: '80%',
+            minWidth: '80%',
+            margin: '0 auto',
+          }}
+        />
+      </MobileColumn>
       {iFrameUrl && (
         <IFrameWrapper>
           {isIFrameLoading && (
             <Spin style={{ marginTop: '50px' }} size='large' />
           )}
-          <iframe
+          <StyledIFrame
             onLoad={() => setIsIFrameLoading(false)}
             style={{
               display: isIFrameLoading ? 'none' : 'block',
-              width: '90%',
-              height: '90vh',
-              border: 'none',
             }}
             src={iFrameUrl}
           />

@@ -4,8 +4,6 @@ import { Hero, About, Experience, Projects } from '../../components';
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: #d7d7d7;
-  height: 100vh;
 `;
 
 const Home: React.FC = () => {

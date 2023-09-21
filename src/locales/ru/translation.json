@@ -48,5 +48,6 @@
   "Add other projects": "Добавить остальные проекты",
   "Responsive design for small devices": "Адаптивный дизайн для маленьких устройств",
   "Reduce bundle size (currently 5MB of react-icons are loaded)": "Уменьшить размер сборки (в данный момент подгружается 5MB иконок react-icons)",
-  "Add some animations": "Добавить анимации"
+  "Add some animations": "Добавить анимации",
+  "About me": "Обо мне"
 }

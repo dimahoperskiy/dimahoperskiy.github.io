@@ -14,6 +14,12 @@ const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 800px) {
+    h1 {
+      margin: 0;
+    }
+  }
 `;
 
 const ProjectCardWrapper = styled.div`
@@ -24,6 +30,11 @@ const ProjectCardWrapper = styled.div`
 
 const ProjectImage = styled.img`
   border-radius: 5px;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ImageOverlay = styled.div<{ $contrast?: boolean }>`
@@ -42,6 +53,15 @@ const CardInfo = styled.div`
   position: absolute;
   bottom: 0;
   left: 15px;
+`;
+
+const StyledTimeline = styled(Timeline)`
+  width: 40%;
+  margin: 40px auto;
+
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 `;
 
 type ProjectCardProps = {
@@ -185,16 +205,11 @@ const Projects: React.FC = () => {
       >
         {t('To be developed ...')}
       </Title>
-      <Timeline
-        style={{ width: '80%', margin: '0 auto' }}
+      <StyledTimeline
         items={[
           {
             color: '#00dfff',
             children: t('Add other projects'),
-          },
-          {
-            color: '#00dfff',
-            children: t('Responsive design for small devices'),
           },
           {
             color: '#00dfff',

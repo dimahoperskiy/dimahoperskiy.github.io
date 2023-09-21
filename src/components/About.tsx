@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Space, Typography, Col, Row } from 'antd';
-const { Paragraph, Text } = Typography;
+const { Paragraph, Text, Title } = Typography;
 import meImg from 'assets/meShowing.png';
 import { useTranslation } from 'react-i18next';
 
@@ -19,6 +19,21 @@ const Wrapper = styled.section`
   justify-content: flex-end;
   align-items: center;
   position: relative;
+
+  @media (max-width: 800px) {
+    justify-content: unset;
+    height: auto;
+    padding-bottom: 35px;
+  }
+`;
+
+const DesktopRow = styled(Row)`
+  padding-bottom: 450px;
+  padding-left: 5%;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const Me = styled.img`
@@ -27,6 +42,16 @@ const Me = styled.img`
   left: 0;
   right: 15%;
   margin: 0 auto;
+`;
+
+const MobileColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+
+  @media (min-width: 801px) {
+    display: none;
+  }
 `;
 
 const declination = (number: number) => {
@@ -90,12 +115,7 @@ const About: React.FC = () => {
 
   return (
     <Wrapper id='about-section'>
-      <Row
-        style={{
-          paddingBottom: '450px',
-          paddingLeft: '5%',
-        }}
-      >
+      <DesktopRow>
         <Col
           span={6}
           offset={2}
@@ -131,7 +151,41 @@ const About: React.FC = () => {
             {mappedRareSkills}
           </Space>
         </Col>
-      </Row>
+      </DesktopRow>
+      <MobileColumn>
+        <Title
+          style={{
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            fontWeight: 300,
+            paddingTop: '40px',
+            marginTop: 0,
+          }}
+          level={1}
+        >
+          {t('About me')}
+        </Title>
+        <Paragraph style={{ textAlign: 'justify', marginBottom: 40 }}>
+          {t('Dmitriy')}, {myAge}{' '}
+          {t('years old', addAgeParams && { label: label })}, {t('aboutMeInfo')}
+        </Paragraph>
+        <Text>{t('Decent knowledge')}</Text>
+        <Space
+          style={{ marginTop: '6px', marginBottom: '40px' }}
+          size={[8, 8]}
+          wrap
+        >
+          {mappedSkills}
+        </Space>
+        <Text>{t('Used a little')}</Text>
+        <Space
+          style={{ marginTop: '6px', marginBottom: '6px' }}
+          size={[8, 8]}
+          wrap
+        >
+          {mappedRareSkills}
+        </Space>
+      </MobileColumn>
     </Wrapper>
   );
 };
