@@ -11,7 +11,7 @@ const BundleAnalyzerPlugin =
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
-const analyze = true;
+const analyze = false;
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
