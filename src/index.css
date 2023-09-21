@@ -1,10 +1,25 @@
-body {
-  margin: 0;
-  background-color: darkorchid;
-  padding: 5px;
+@font-face {
+  font-family: 'Raleway';
+  src: url("assets/fonts/Raleway-Light.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
 }
 
-h1 {
-  font-size: 36px;
-  color: green;
+@font-face {
+  font-family: 'Raleway';
+  src: url("assets/fonts/Raleway-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("assets/fonts/Raleway-Bold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #131313;
 }
