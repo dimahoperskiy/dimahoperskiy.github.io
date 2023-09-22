@@ -103,7 +103,7 @@ const rareSkillsData: Skill[] = [
 const About: React.FC = () => {
   const { t, i18n } = useTranslation();
   const myAge = calculateAge(new Date(MY_BIRTHDAY));
-  const label = declination(myAge);
+  const label = declination(myAge || 21);
   let addAgeParams = i18n.language === 'ru';
 
   const mappedSkills = skillsData.map((skill: Skill) => (
@@ -166,7 +166,7 @@ const About: React.FC = () => {
           {t('About me')}
         </Title>
         <Paragraph style={{ textAlign: 'justify', marginBottom: 40 }}>
-          {t('Dmitriy')}, {myAge}{' '}
+          {t('Dmitriy')}, {myAge || 21}{' '}
           {t('years old', addAgeParams && { label: label })}, {t('aboutMeInfo')}
         </Paragraph>
         <Text>{t('Decent knowledge')}</Text>

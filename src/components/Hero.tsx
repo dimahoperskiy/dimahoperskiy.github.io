@@ -14,6 +14,15 @@ const Wrapper = styled.section`
 
   @media (max-width: 800px) {
     flex-direction: column;
+
+    h1 {
+      font-size: 2em;
+      margin-top: 10px !important;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
   }
 `;
 
@@ -27,7 +36,7 @@ const AvatarBox = styled.div`
     order: 2;
     display: flex;
     justify-content: center;
-    bottom: 5vh;
+    bottom: 1%;
     z-index: 1;
   }
 `;
@@ -39,7 +48,7 @@ const Me = styled.img`
 
   @media (max-width: 800px) {
     position: unset;
-    height: 60vh;
+    height: 55vh;
     width: auto;
   }
 `;
@@ -68,7 +77,6 @@ const InfoTextWrapper = styled.div`
 
   @media (max-width: 800px) {
     padding: 20px;
-    margin-top: 20px;
     text-align: center;
   }
 `;
@@ -77,7 +85,7 @@ const ButtonsSpace = styled(Space)`
   margin-top: 100px;
 
   @media (max-width: 800px) {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 `;
 

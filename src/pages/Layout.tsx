@@ -3,6 +3,15 @@ import { FloatButton } from 'antd';
 import ReactCountryFlag from 'react-country-flag';
 import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
+
+const StyledFloatButton = styled(FloatButton)`
+  top: 15px;
+  @media (max-width: 800px) {
+    right: 10px;
+    top: 10px;
+  }
+`;
 
 const Layout = () => {
   const { i18n } = useTranslation();
@@ -21,9 +30,8 @@ const Layout = () => {
 
   return (
     <>
-      <FloatButton
+      <StyledFloatButton
         onClick={handleLanguageSwitcherClick}
-        style={{ top: '15px' }}
         icon={<ReactCountryFlag countryCode={countryCode} />}
       />
       <Outlet />
