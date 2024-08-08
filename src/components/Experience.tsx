@@ -131,8 +131,8 @@ const getCurrentDateFormatted = () => {
   const currentDate = new Date();
 
   const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  const day = String(currentDate.getDate()).padStart(2, '0');
 
   return `${year}-${month}-${day}`;
 };
@@ -241,11 +241,11 @@ const Experience: React.FC = () => {
           </Title>
           <TotalTime
             totalYears={
-              calculateYearsAndMonths('2019-11-1', getCurrentDateFormatted())
+              calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
                 .years
             }
             totalMonths={
-              calculateYearsAndMonths('2019-11-1', getCurrentDateFormatted())
+              calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
                 .months
             }
             title
@@ -259,33 +259,33 @@ const Experience: React.FC = () => {
                 getShortDate(2019, 11, 1),
                 getShortDate(2021, 4, 1),
                 t('freelanceDescription'),
-                calculateYearsAndMonths('2019-11-1', '2021-4-1').years,
-                calculateYearsAndMonths('2019-11-1', '2021-4-1').months,
+                calculateYearsAndMonths('2019-11-01', '2021-04-01').years,
+                calculateYearsAndMonths('2019-11-01', '2021-04-01').months,
               ),
               TimeLineItem(
                 t('Gusi-Lebedi'),
                 getShortDate(2021, 6, 1),
                 getShortDate(2022, 12, 31),
                 t('gusiDescription'),
-                calculateYearsAndMonths('2021-6-1', '2022-12-31').years,
-                calculateYearsAndMonths('2021-6-1', '2022-12-31').months,
+                calculateYearsAndMonths('2021-06-01', '2022-12-31').years,
+                calculateYearsAndMonths('2021-06-01', '2022-12-31').months,
               ),
               TimeLineItem(
                 t('Inmar Technologies'),
                 getShortDate(2023, 1, 1),
                 getShortDate(2024, 1, 1),
                 t('inmarDescription'),
-                calculateYearsAndMonths('2023-1-1', '2024-1-1').years,
-                calculateYearsAndMonths('2023-1-1', '2024-1-1').months,
+                calculateYearsAndMonths('2023-01-01', '2024-01-01').years,
+                calculateYearsAndMonths('2023-01-01', '2024-01-01').months,
               ),
               TimeLineItem(
                 t('Xsolla'),
                 getShortDate(2024, 1, 1),
                 t('Present'),
                 t('xsollaDescription'),
-                calculateYearsAndMonths('2024-1-1', getCurrentDateFormatted())
+                calculateYearsAndMonths('2024-01-01', getCurrentDateFormatted())
                   .years,
-                calculateYearsAndMonths('2024-1-1', getCurrentDateFormatted())
+                calculateYearsAndMonths('2024-01-01', getCurrentDateFormatted())
                   .months,
               ),
             ]}
@@ -354,11 +354,11 @@ const Experience: React.FC = () => {
         </Title>
         <TotalTime
           totalYears={
-            calculateYearsAndMonths('2019-11-1', getCurrentDateFormatted())
+            calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
               .years
           }
           totalMonths={
-            calculateYearsAndMonths('2019-11-1', getCurrentDateFormatted())
+            calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
               .months
           }
           title
@@ -372,33 +372,33 @@ const Experience: React.FC = () => {
               getShortDate(2019, 11, 1),
               getShortDate(2021, 4, 1),
               t('freelanceDescription'),
-              calculateYearsAndMonths('2019-11-1', '2021-4-1').years,
-              calculateYearsAndMonths('2019-11-1', '2021-4-1').months,
+              calculateYearsAndMonths('2019-11-01', '2021-04-01').years,
+              calculateYearsAndMonths('2019-11-01', '2021-04-01').months,
             ),
             TimeLineItem(
               t('Gusi-Lebedi'),
               getShortDate(2021, 6, 1),
               getShortDate(2022, 12, 31),
               t('gusiDescription'),
-              calculateYearsAndMonths('2021-6-1', '2022-12-31').years,
-              calculateYearsAndMonths('2021-6-1', '2022-12-31').months,
+              calculateYearsAndMonths('2021-06-01', '2022-12-31').years,
+              calculateYearsAndMonths('2021-06-01', '2022-12-31').months,
             ),
             TimeLineItem(
               t('Inmar Technologies'),
               getShortDate(2023, 1, 1),
               getShortDate(2024, 1, 1),
               t('inmarDescription'),
-              calculateYearsAndMonths('2023-1-1', '2024-1-1').years,
-              calculateYearsAndMonths('2023-1-1', '2024-1-1').months,
+              calculateYearsAndMonths('2023-01-01', '2024-01-01').years,
+              calculateYearsAndMonths('2023-01-01', '2024-01-01').months,
             ),
             TimeLineItem(
               t('Xsolla'),
               getShortDate(2024, 1, 1),
               t('Present'),
               t('xsollaDescription'),
-              calculateYearsAndMonths('2024-1-1', getCurrentDateFormatted())
+              calculateYearsAndMonths('2024-01-01', getCurrentDateFormatted())
                 .years,
-              calculateYearsAndMonths('2024-1-1', getCurrentDateFormatted())
+              calculateYearsAndMonths('2024-01-01', getCurrentDateFormatted())
                 .months,
             ),
           ]}

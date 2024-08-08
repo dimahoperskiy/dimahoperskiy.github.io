@@ -9,7 +9,7 @@ import SkillTag from './SkillTag';
 import skillsDataObject from '../utils/skillsDataObject';
 import { Skill } from '../types/common';
 
-const MY_BIRTHDAY = '01-11-2002';
+const MY_BIRTHDAY = '2002-01-11';
 
 const Wrapper = styled.section`
   width: 100%;
