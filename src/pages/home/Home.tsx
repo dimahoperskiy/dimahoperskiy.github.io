@@ -7,10 +7,12 @@ const Wrapper = styled.div`
 `;
 
 const Home: React.FC = () => {
+  const aboutSectionRef = React.useRef<HTMLElement | null>(null);
+
   return (
     <Wrapper>
-      <Hero />
-      <About />
+      <Hero aboutSectionRef={aboutSectionRef} />
+      <About aboutSectionRef={aboutSectionRef} />
       <Experience />
       <Projects />
     </Wrapper>

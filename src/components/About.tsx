@@ -64,9 +64,11 @@ const declination = (number: number) => {
   ];
 };
 
-const calculateAge = (birthday: any) => {
-  var ageDifMs = Date.now() - birthday;
-  var ageDate = new Date(ageDifMs);
+const calculateAge = (birthday: Date) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const ageDifMs = Date.now() - birthday;
+  const ageDate = new Date(ageDifMs);
   return Math.abs(ageDate.getUTCFullYear() - 1970);
 };
 
@@ -86,6 +88,9 @@ const skillsData: Skill[] = [
   skillsDataObject.nodeJs,
   skillsDataObject.reactRouter,
   skillsDataObject.axios,
+  skillsDataObject.tailwind,
+  skillsDataObject.vite,
+  skillsDataObject.i18next,
 ];
 
 const rareSkillsData: Skill[] = [
@@ -99,12 +104,18 @@ const rareSkillsData: Skill[] = [
   skillsDataObject.openLayers,
   skillsDataObject.postgresql,
   skillsDataObject.linux,
+  skillsDataObject.firebase,
+  skillsDataObject.neo4j,
 ];
-const About: React.FC = () => {
+
+type AboutSectionProps = {
+  aboutSectionRef: React.RefObject<HTMLElement>;
+};
+const About: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
   const { t, i18n } = useTranslation();
   const myAge = calculateAge(new Date(MY_BIRTHDAY));
   const label = declination(myAge || 21);
-  let addAgeParams = i18n.language === 'ru';
+  const addAgeParams = i18n.language === 'ru';
 
   const mappedSkills = skillsData.map((skill: Skill) => (
     <SkillTag key={skill.label} {...skill} />
@@ -114,7 +125,7 @@ const About: React.FC = () => {
   ));
 
   return (
-    <Wrapper id='about-section'>
+    <Wrapper ref={aboutSectionRef} id='about-section'>
       <DesktopRow>
         <Col
           span={6}

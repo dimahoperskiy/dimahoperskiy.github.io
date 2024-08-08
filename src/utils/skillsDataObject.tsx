@@ -25,6 +25,11 @@ import {
   SiWebpack,
   SiAxios,
   SiLinux,
+  SiTailwindcss,
+  SiVite,
+  SiI18Next,
+  SiFirebase,
+  SiNeo4J,
 } from 'react-icons/si';
 import React from 'react';
 
@@ -54,6 +59,11 @@ enum skillsEnum {
   postgresql = 'postgresql',
   axios = 'axios',
   linux = 'linux',
+  tailwind = 'tailwind',
+  vite = 'vite',
+  i18next = 'i18next',
+  firebase = 'firebase',
+  neo4j = 'neo4j',
 }
 
 const skillsDataObject: { [key in skillsEnum]: Skill } = {
@@ -181,6 +191,31 @@ const skillsDataObject: { [key in skillsEnum]: Skill } = {
     icon: <SiLinux />,
     label: 'Linux',
     color: '#f6bf04',
+  },
+  tailwind: {
+    icon: <SiTailwindcss />,
+    label: 'Tailwind',
+    color: '#06b6d4',
+  },
+  vite: {
+    icon: <SiVite />,
+    label: 'Vite',
+    color: '#646cff',
+  },
+  i18next: {
+    icon: <SiI18Next />,
+    label: 'i18next',
+    color: '#009788',
+  },
+  firebase: {
+    icon: <SiFirebase />,
+    label: 'Firebase',
+    color: '#f5851d',
+  },
+  neo4j: {
+    icon: <SiNeo4J />,
+    label: 'Neo4j',
+    color: '#0387f7',
   },
 };
 

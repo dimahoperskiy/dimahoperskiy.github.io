@@ -13,7 +13,7 @@ import {
 } from 'antd';
 import { ProjectUrls } from '../../types/common';
 import { useTranslation, Trans } from 'react-i18next';
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import SkillTag from '../../components/SkillTag';
 import { Skill } from '../../types/common';

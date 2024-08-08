@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Space, Typography, Divider, Tag, Timeline } from 'antd';
-const { Paragraph, Text, Title } = Typography;
+const { Paragraph, Title } = Typography;
 import solarImg from 'assets/projectImages/solar-system.png';
 import flightsImg from 'assets/projectImages/flights-monitoring.png';
 import richbeeImg from 'assets/projectImages/richbee.png';
 import solutionCupImg from 'assets/projectImages/solution-cup.png';
-import chatImg from 'assets/projectImages/chat.png';
 import { Link } from 'react-router-dom';
 
 const Wrapper = styled.section`

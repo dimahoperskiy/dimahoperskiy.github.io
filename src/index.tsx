@@ -5,7 +5,7 @@ import { Route, Routes, HashRouter, Navigate } from 'react-router-dom';
 import { Home } from './pages/home';
 import Layout from './pages/Layout';
 import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import { ConfigProvider, ThemeConfig } from 'antd';
 import translationEN from './locales/en/translation.json';
 import translationRU from './locales/ru/translation.json';

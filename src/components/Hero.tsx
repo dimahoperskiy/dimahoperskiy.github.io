@@ -6,6 +6,7 @@ import { SiGithub, SiGmail, SiTelegram } from 'react-icons/si';
 import { Typography, Button, Space } from 'antd';
 const { Title } = Typography;
 import { AiOutlineArrowDown } from 'react-icons/ai';
+import HHIconImg from 'assets/hhlogo.png';
 
 const Wrapper = styled.section`
   display: flex;
@@ -90,6 +91,7 @@ const ButtonsSpace = styled(Space)`
 `;
 
 const Arrow = styled(AiOutlineArrowDown)`
+  cursor: pointer;
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -114,8 +116,23 @@ const Arrow = styled(AiOutlineArrowDown)`
   }
 `;
 
-const Hero = () => {
+const HHIcon = styled('img')`
+  width: 18px;
+  height: 18px;
+`;
+
+type HeroSectionProps = {
+  aboutSectionRef: React.RefObject<HTMLElement>;
+};
+
+const Hero: React.FC<HeroSectionProps> = ({ aboutSectionRef }) => {
   const { t } = useTranslation();
+
+  const handleScroll = () => {
+    if (aboutSectionRef.current) {
+      aboutSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Wrapper id='hero-section'>
@@ -156,10 +173,16 @@ const Hero = () => {
               size='large'
               icon={<SiTelegram />}
             />
+            <Button
+              target='_blank'
+              href='https://hh.ru/resume/fdb658e3ff0b96263a0039ed1f794964466775'
+              size='large'
+              icon={<HHIcon src={HHIconImg} />}
+            />
           </ButtonsSpace>
         </InfoTextWrapper>
       </InfoBox>
-      <Arrow />
+      <Arrow onClick={handleScroll} />
     </Wrapper>
   );
 };

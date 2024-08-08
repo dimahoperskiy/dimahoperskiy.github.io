@@ -24,8 +24,9 @@
   "Gusi-Lebedi": "Gusi-Lebedi",
   "gusiDescription": "Web-applications development from scratch in team. Worked according to layouts from Figma, interaction with the API, created and managed the state. Worked with simple and complex animations",
   "Xsolla": "Xsolla",
-  "xsollaDescription": "Support for big Web-applications. Working with legacy code. Implementation of new functionality, bug fixes, code review",
+  "xsollaDescription": "Development of web stores for games. Teamwork. Code review",
   "Inmar Technologies": "Inmar Technologies",
+  "inmarDescription": "Redesign of the email client, working with 10-year-old code. Development of internal UI-Kit. Working with large forms",
   "Projects": "Projects",
   "Live demo": "Live demo",
   "Solar System": "Solar System",
@@ -50,5 +51,11 @@
   "Responsive design for small devices": "Responsive design for small devices",
   "Reduce bundle size (currently 5MB of react-icons are loaded)": "Reduce bundle size (currently 5MB of react-icons are loaded)",
   "Add some animations": "Add some animations",
-  "About me": "About me"
+  "About me": "About me",
+  "year1": "year",
+  "year2": "years",
+  "year3": "years",
+  "month1": "month",
+  "month2": "months",
+  "month3": "months"
 }
