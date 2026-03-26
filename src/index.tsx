@@ -9,6 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import { ConfigProvider, ThemeConfig } from 'antd';
 import translationEN from './locales/en/translation.json';
 import translationRU from './locales/ru/translation.json';
+import { LoadingSpin } from './pages/project/Project.styles';
 const Project = React.lazy(() => import('./pages/project/Project'));
 
 const theme: ThemeConfig = {
@@ -53,7 +54,14 @@ i18n.use(initReactI18next).init({
 const App = () => {
   return (
     <ConfigProvider theme={theme}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <LoadingSpin
+            size='large'
+            style={{ position: 'absolute', inset: 0 }}
+          />
+        }
+      >
         <HashRouter>
           <Routes>
             <Route path='/' element={<Layout />}>
