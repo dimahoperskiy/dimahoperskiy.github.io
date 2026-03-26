@@ -99,7 +99,7 @@ const About: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
       <DesktopRow>
         <TextCol span={6} offset={2}>
           <JustifyParagraph>
-            {t('Dmitriy')}, {myAge}{' '}
+            {t('Dmitrii')}, {myAge}{' '}
             {addAgeParams ? t('years old', { label }) : t('years old')},{' '}
             {t('aboutMeInfo')}
           </JustifyParagraph>
@@ -119,7 +119,7 @@ const About: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
       <MobileColumn>
         <MobileSectionTitle level={1}>{t('About me')}</MobileSectionTitle>
         <MobileIntroParagraph>
-          {t('Dmitriy')}, {myAge || 21}{' '}
+          {t('Dmitrii')}, {myAge || 21}{' '}
           {addAgeParams ? t('years old', { label }) : t('years old')},{' '}
           {t('aboutMeInfo')}
         </MobileIntroParagraph>

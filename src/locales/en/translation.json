@@ -1,8 +1,8 @@
 {
   "Hi, I am": "Hi, I am",
-  "Dmitriy Khoperskiy": "Dmitriy Khoperskiy",
+  "Dmitrii Khoperskii": "Dmitrii Khoperskii",
   "Front-end Developer": "Front-end Developer",
-  "Dmitriy": "Dmitriy",
+  "Dmitrii": "Dmitrii",
   "years old": "years old",
   "aboutMeInfo": "Front-end Developer with 5 years of commercial development experience. Started learning programming since I was in school. I have a higher technical education in the direction of \"Applied Computer Science\". In my spare time I go in for sports and play videogames.",
   "Decent knowledge": "Decent knowledge",
@@ -55,7 +55,7 @@
   "year1": "year",
   "year2": "years",
   "year3": "years",
-  "year-short": "y",
+  "year-short": "",
   "month1": "month",
   "month2": "months",
   "month3": "months"

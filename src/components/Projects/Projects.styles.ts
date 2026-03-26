@@ -94,7 +94,6 @@ export const CardDate = styled(Paragraph)`
     margin-bottom: 5px;
     font-weight: 700;
     font-size: 16px;
-    text-transform: capitalize;
   }
 `;
 
