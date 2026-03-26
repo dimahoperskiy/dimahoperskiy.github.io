@@ -1,59 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Space, Typography, Col, Row } from 'antd';
-const { Paragraph, Text, Title } = Typography;
-import meImg from 'assets/meShowing.png';
+import { Typography, Col } from 'antd';
+import meImg from '../../assets/meShowingUpdated.png';
 import { useTranslation } from 'react-i18next';
 
-import SkillTag from './SkillTag';
-import skillsDataObject from '../utils/skillsDataObject';
-import { Skill } from '../types/common';
+import SkillTag from '../SkillTag/SkillTag';
+import skillsDataObject from '../../utils/skillsDataObject';
+import { Skill } from '../../types/common';
 import Balancer from 'react-wrap-balancer';
+import {
+  Wrapper,
+  DesktopRow,
+  TextCol,
+  Me,
+  MobileColumn,
+  JustifyParagraph,
+  MobileIntroParagraph,
+  SkillsSpace,
+  MobileSkillsSpace,
+  MobileSectionTitle,
+} from './About.styles';
+
+const { Text } = Typography;
 
 const MY_BIRTHDAY = '2002-01-11';
-
-const Wrapper = styled.section`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-
-  @media (max-width: 800px) {
-    justify-content: unset;
-    height: auto;
-    padding-bottom: 35px;
-  }
-`;
-
-const DesktopRow = styled(Row)`
-  padding-bottom: 450px;
-  padding-left: 5%;
-
-  @media (max-width: 800px) {
-    display: none;
-  }
-`;
-
-const Me = styled.img`
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 15%;
-  margin: 0 auto;
-`;
-
-const MobileColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 5%;
-
-  @media (min-width: 801px) {
-    display: none;
-  }
-`;
 
 const declination = (number: number) => {
   const cases = [2, 0, 1, 1, 1, 2];
@@ -128,75 +97,40 @@ const About: React.FC<AboutSectionProps> = ({ aboutSectionRef }) => {
   return (
     <Wrapper ref={aboutSectionRef} id='about-section'>
       <DesktopRow>
-        <Col
-          span={6}
-          offset={2}
-          style={{
-            position: 'relative',
-            zIndex: 1,
-            mixBlendMode: 'difference',
-            top: '45px',
-          }}
-        >
-          <Paragraph style={{ textAlign: 'justify' }}>
+        <TextCol span={6} offset={2}>
+          <JustifyParagraph>
             {t('Dmitriy')}, {myAge}{' '}
-            {t('years old', addAgeParams && { label: label })},{' '}
+            {addAgeParams ? t('years old', { label }) : t('years old')},{' '}
             {t('aboutMeInfo')}
-          </Paragraph>
-        </Col>
-        <Me width='330px' height='664px' src={meImg} />
+          </JustifyParagraph>
+        </TextCol>
+        <Me width='323px' height='664px' src={meImg} />
         <Col span={11} offset={3}>
           <Text>{t('Decent knowledge')}</Text>
-          <Space
-            style={{ marginTop: '6px', marginBottom: '6px' }}
-            size={[8, 8]}
-            wrap
-          >
+          <SkillsSpace size={[8, 8]} wrap>
             {mappedSkills}
-          </Space>
+          </SkillsSpace>
           <Text>{t('Used a little')}</Text>
-          <Space
-            style={{ marginTop: '6px', marginBottom: '6px' }}
-            size={[8, 8]}
-            wrap
-          >
+          <SkillsSpace size={[8, 8]} wrap>
             {mappedRareSkills}
-          </Space>
+          </SkillsSpace>
         </Col>
       </DesktopRow>
       <MobileColumn>
-        <Title
-          style={{
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            fontWeight: 300,
-            paddingTop: '40px',
-            marginTop: 0,
-          }}
-          level={1}
-        >
-          {t('About me')}
-        </Title>
-        <Paragraph style={{ textAlign: 'justify', marginBottom: 40 }}>
+        <MobileSectionTitle level={1}>{t('About me')}</MobileSectionTitle>
+        <MobileIntroParagraph>
           {t('Dmitriy')}, {myAge || 21}{' '}
-          {t('years old', addAgeParams && { label: label })}, {t('aboutMeInfo')}
-        </Paragraph>
+          {addAgeParams ? t('years old', { label }) : t('years old')},{' '}
+          {t('aboutMeInfo')}
+        </MobileIntroParagraph>
         <Text>{t('Decent knowledge')}</Text>
-        <Space
-          style={{ marginTop: '6px', marginBottom: '40px' }}
-          size={[8, 8]}
-          wrap
-        >
+        <MobileSkillsSpace size={[8, 8]} wrap>
           {mappedSkills}
-        </Space>
+        </MobileSkillsSpace>
         <Text>{t('Used a little')}</Text>
-        <Space
-          style={{ marginTop: '6px', marginBottom: '6px' }}
-          size={[8, 8]}
-          wrap
-        >
+        <SkillsSpace size={[8, 8]} wrap>
           {mappedRareSkills}
-        </Space>
+        </SkillsSpace>
       </MobileColumn>
     </Wrapper>
   );

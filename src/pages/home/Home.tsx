@@ -1,10 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Hero, About, Experience, Projects } from '../../components';
-
-const Wrapper = styled.div`
-  width: 100%;
-`;
+import { Wrapper } from './Home.styles';
 
 const Home: React.FC = () => {
   const aboutSectionRef = React.useRef<HTMLElement | null>(null);

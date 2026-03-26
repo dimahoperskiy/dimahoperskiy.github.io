@@ -1,87 +1,35 @@
 import React from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import {
-  Typography,
-  Space,
-  Divider,
-  Row,
-  Col,
-  Button,
-  Spin,
-  QRCode,
-} from 'antd';
+import { Col } from 'antd';
 import { ProjectUrls } from '../../types/common';
 import { useTranslation, Trans } from 'react-i18next';
-const { Title, Paragraph } = Typography;
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import SkillTag from '../../components/SkillTag';
+import SkillTag from '../../components/SkillTag/SkillTag';
 import { Skill } from '../../types/common';
 import { SiGithub } from 'react-icons/si';
 import skillsDataObject from '../../utils/skillsDataObject';
-
-const Wrapper = styled.div`
-  padding: 40px;
-
-  @media (max-width: 800px) {
-    padding: 40px 5%;
-  }
-`;
-
-const IFrameWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const StyledIFrame = styled.iframe`
-  width: 90%;
-  height: 90vh;
-  border: none;
-
-  @media (max-width: 800px) {
-    width: 95%;
-    height: 80vh;
-  }
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  text-align: justify;
-  p {
-    margin: 5px;
-  }
-`;
-
-const StyledQRCode = styled(QRCode)`
-  margin: 0 auto;
-  overflow: visible;
-
-  @media (max-width: 800px) {
-    padding-bottom: 40px;
-    overflow: visible;
-  }
-`;
-
-const DesktopRow = styled(Row)`
-  width: 85%;
-  margin: 0 auto;
-  padding-top: 10px;
-  margin-bottom: 40px;
-
-  @media (max-width: 800px) {
-    display: none;
-  }
-`;
-
-const MobileColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 5%;
-  padding-bottom: 28px;
-
-  @media (min-width: 801px) {
-    display: none;
-  }
-`;
+import {
+  Wrapper,
+  HeaderSpace,
+  BackArrow,
+  PageTitle,
+  HorizontalDivider,
+  DesktopRow,
+  SectionTitle,
+  VerticalDividerCol,
+  VerticalDivider,
+  StyledParagraph,
+  MobileAboutParagraph,
+  TechStackSpace,
+  MobileTechStackSpace,
+  SourceButtonDesktop,
+  SourceButtonMobile,
+  MobileColumn,
+  MobileSectionTitle,
+  IFrameWrapper,
+  StyledIFrame,
+  LoadingSpin,
+  StyledQRCode,
+} from './Project.styles';
 
 const Project: React.FC = () => {
   const { projectUrl } = useParams();
@@ -179,161 +127,66 @@ const Project: React.FC = () => {
 
   return (
     <Wrapper>
-      <Space style={{ alignItems: 'center', marginBottom: '40px' }}>
+      <HeaderSpace>
         <Link to='/'>
-          <AiOutlineArrowLeft
-            style={{
-              marginRight: '20px',
-              color: '#e2e2e2',
-              fontSize: '45px',
-            }}
-          />
+          <BackArrow />
         </Link>
-        <Title style={{ margin: 0 }} level={1}>
-          {label}
-        </Title>
-      </Space>
-      <Divider
-        style={{
-          width: '80%',
-          minWidth: '80%',
-          margin: '0 auto',
-        }}
-      />
+        <PageTitle level={1}>{label}</PageTitle>
+      </HeaderSpace>
+      <HorizontalDivider />
       <DesktopRow>
         <Col span={11}>
-          <Title
-            style={{
-              textTransform: 'uppercase',
-              textAlign: 'center',
-              fontWeight: 300,
-            }}
-            level={1}
-          >
-            {t('About project')}
-          </Title>
+          <SectionTitle level={1}>{t('About project')}</SectionTitle>
           <StyledParagraph>
             <Trans i18nKey={descriptionMessageId} />
           </StyledParagraph>
         </Col>
-        <Col style={{ display: 'flex', justifyContent: 'center' }} span={2}>
-          <Divider
-            type='vertical'
-            style={{
-              height: '90%',
-              marginTop: '30px',
-            }}
-          />
-        </Col>
+        <VerticalDividerCol span={2}>
+          <VerticalDivider />
+        </VerticalDividerCol>
         <Col span={11}>
-          <Title
-            style={{
-              textTransform: 'uppercase',
-              textAlign: 'center',
-              fontWeight: 300,
-            }}
-            level={1}
-          >
-            {t('Tech stack')}
-          </Title>
-          <Space
-            style={{ marginTop: '6px', marginBottom: '6px' }}
-            size={[8, 16]}
-            wrap
-          >
+          <SectionTitle level={1}>{t('Tech stack')}</SectionTitle>
+          <TechStackSpace size={[8, 16]} wrap>
             {mappedSkills}
-          </Space>
-          <Button
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              position: 'absolute',
-              bottom: '15px',
-            }}
+          </TechStackSpace>
+          <SourceButtonDesktop
             target='_blank'
             href={sourceCodeUrl}
             size='large'
             icon={<SiGithub />}
           >
             {t('Source code')}
-          </Button>
+          </SourceButtonDesktop>
         </Col>
         <AdditionalInfo />
       </DesktopRow>
       <MobileColumn>
-        <Title
-          style={{
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            fontWeight: 300,
-          }}
-          level={1}
-        >
-          {t('About project')}
-        </Title>
-        <StyledParagraph style={{ marginBottom: '28px' }}>
+        <SectionTitle level={1}>{t('About project')}</SectionTitle>
+        <MobileAboutParagraph>
           <Trans i18nKey={descriptionMessageId} />
-        </StyledParagraph>
+        </MobileAboutParagraph>
         <AdditionalInfo />
-        <Divider
-          style={{
-            width: '80%',
-            minWidth: '80%',
-            margin: '0 auto',
-          }}
-        />
-        <Title
-          style={{
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            fontWeight: 300,
-            margin: '28px 0',
-          }}
-          level={1}
-        >
-          {t('Tech stack')}
-        </Title>
-        <Space
-          style={{ marginTop: '6px', marginBottom: '28px' }}
-          size={[8, 16]}
-          wrap
-        >
+        <HorizontalDivider />
+        <MobileSectionTitle level={1}>{t('Tech stack')}</MobileSectionTitle>
+        <MobileTechStackSpace size={[8, 16]} wrap>
           {mappedSkills}
-        </Space>
-        <Button
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            width: '170px',
-            justifyContent: 'center',
-            textDecoration: 'none',
-            marginBottom: '28px',
-          }}
+        </MobileTechStackSpace>
+        <SourceButtonMobile
           target='_blank'
           href={sourceCodeUrl}
           size='large'
           icon={<SiGithub />}
         >
           {t('Source code')}
-        </Button>
-        <Divider
-          style={{
-            width: '80%',
-            minWidth: '80%',
-            margin: '0 auto',
-          }}
-        />
+        </SourceButtonMobile>
+        <HorizontalDivider />
       </MobileColumn>
       {iFrameUrl && (
         <IFrameWrapper>
-          {isIFrameLoading && (
-            <Spin style={{ marginTop: '50px' }} size='large' />
-          )}
+          {isIFrameLoading && <LoadingSpin size='large' />}
           <StyledIFrame
+            $hidden={isIFrameLoading}
             onLoad={() => setIsIFrameLoading(false)}
-            style={{
-              display: isIFrameLoading ? 'none' : 'block',
-            }}
             src={iFrameUrl}
           />
         </IFrameWrapper>

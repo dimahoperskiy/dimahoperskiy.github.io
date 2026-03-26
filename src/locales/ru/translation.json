@@ -27,7 +27,7 @@
   "Inmar Technologies": "Инмар Технолоджис",
   "inmarDescription": "Редизайн почтового клиента, работа с кодом 10-летней давности. Разработка внутреннего UI-Kit. Работа с большими формами",
   "Projects": "Проекты",
-  "Live demo": "Живая демонстрация",
+  "Live demo": "Можно потыкать",
   "Solar System": "Солнечная Система",
   "React + Three.js project to create Solar System prototype": "Прототип Солнечной Системы на React + Three.js",
   "Flights monitoring": "Мониторинг полетов",
@@ -54,6 +54,7 @@
   "year1": "год",
   "year2": "года",
   "year3": "лет",
+  "year-short": "г.",
   "month1": "месяц",
   "month2": "месяца",
   "month3": "месяцев"

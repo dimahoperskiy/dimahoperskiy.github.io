@@ -1,5 +1,5 @@
 import './index.css';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Route, Routes, HashRouter, Navigate } from 'react-router-dom';
 import { Home } from './pages/home';
@@ -9,7 +9,7 @@ import { initReactI18next } from 'react-i18next';
 import { ConfigProvider, ThemeConfig } from 'antd';
 import translationEN from './locales/en/translation.json';
 import translationRU from './locales/ru/translation.json';
-import { Project } from './pages/project';
+const Project = React.lazy(() => import('./pages/project/Project'));
 
 const theme: ThemeConfig = {
   token: {
@@ -53,18 +53,20 @@ i18n.use(initReactI18next).init({
 const App = () => {
   return (
     <ConfigProvider theme={theme}>
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path='project'>
-              <Route path=':projectUrl' element={<Project />} />
-              <Route path='' element={<Navigate to='/' />} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <HashRouter>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path='project'>
+                <Route path=':projectUrl' element={<Project />} />
+                <Route path='' element={<Navigate to='/' />} />
+              </Route>
+              <Route path='*' element={<Navigate to='/' />} />
             </Route>
-            <Route path='*' element={<Navigate to='/' />} />
-          </Route>
-        </Routes>
-      </HashRouter>
+          </Routes>
+        </HashRouter>
+      </Suspense>
     </ConfigProvider>
   );
 };

@@ -1,9 +1,9 @@
 import React from 'react';
-import { FloatButton } from 'antd';
 import ReactCountryFlag from 'react-country-flag';
 import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import { FloatButton } from 'antd';
 
 const StyledFloatButton = styled(FloatButton)`
   top: 15px;
