@@ -56,7 +56,7 @@ const TimeLineItem = (
   title: string,
   dateFrom: string,
   dateTo: string,
-  description?: string,
+  description?: React.ReactNode,
   totalYears?: number,
   totalMonths?: number,
 ) => ({
@@ -68,7 +68,9 @@ const TimeLineItem = (
         <TotalTime totalYears={totalYears} totalMonths={totalMonths} />
       </TimelineItemTitle>
       <TimelineItemDates>{`${dateFrom} - ${dateTo}`}</TimelineItemDates>
-      {description && <Paragraph>{description}</Paragraph>}
+      {description != null && description !== '' && (
+        <Paragraph>{description}</Paragraph>
+      )}
     </>
   ),
 });
@@ -90,9 +92,10 @@ const Experience: React.FC = () => {
       )} - ${t('Bachelor')}`,
       getShortDate(2019, 9, 1),
       getShortDate(2023, 7, 31),
-      `${t('Faculty of Information Technology and Big Data Analysis')}, ${t(
-        'Applied Computer Science',
-      )}`,
+      <>
+        {t('Faculty of Information Technology and Big Data Analysis')},{' '}
+        <b>{t('Applied Computer Science')}</b>
+      </>,
     ),
     TimeLineItem(
       `${t(
@@ -100,9 +103,10 @@ const Experience: React.FC = () => {
       )} - ${t('Master')}`,
       getShortDate(2023, 9, 1),
       getShortDate(2025, 7, 31),
-      `${t('Faculty of Information Technology and Big Data Analysis')}, ${t(
-        'DevOps Engineering',
-      )}`,
+      <>
+        {t('Faculty of Information Technology and Big Data Analysis')},{' '}
+        <b>{t('DevOps Engineering')}</b>
+      </>,
     ),
   ];
 
