@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
     h1 {
       font-size: 2em;
-      margin-top: 10px !important;
+      margin-top: 10px;
     }
 
     h2 {
@@ -141,11 +141,13 @@ const Hero: React.FC<HeroSectionProps> = ({ aboutSectionRef }) => {
       </AvatarBox>
       <InfoBox>
         <InfoTextWrapper>
-          <Title level={2}>{t('Hi, I am')}</Title>
+          <Title style={{ marginBottom: 5 }} level={2}>
+            {t('Hi, I am')}
+          </Title>
           <Title
             level={1}
             style={{
-              marginTop: 30,
+              marginTop: '0 !important',
               marginBottom: 5,
             }}
           >

@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import SkillTag from './SkillTag';
 import skillsDataObject from '../utils/skillsDataObject';
 import { Skill } from '../types/common';
+import Balancer from 'react-wrap-balancer';
 
 const MY_BIRTHDAY = '2002-01-11';
 
