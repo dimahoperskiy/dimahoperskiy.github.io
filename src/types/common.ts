@@ -6,6 +6,7 @@ export enum ProjectUrls {
   solutionCup = 'solution-cup',
   richbeeShows = 'richbee-shows',
   chat = 'chat',
+  worldQuiz = 'world-quiz',
 }
 
 export type Skill = {

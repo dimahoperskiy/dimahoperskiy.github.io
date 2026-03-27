@@ -30,6 +30,9 @@ import {
   SiI18Next,
   SiFirebase,
   SiNeo4J,
+  SiKubernetes,
+  SiGitlab,
+  SiDocker,
 } from 'react-icons/si';
 import React from 'react';
 
@@ -64,6 +67,9 @@ enum skillsEnum {
   i18next = 'i18next',
   firebase = 'firebase',
   neo4j = 'neo4j',
+  kubernetes = 'kubernetes',
+  gitlab = 'gitlab',
+  docker = 'docker',
 }
 
 const skillsDataObject: { [key in skillsEnum]: Skill } = {
@@ -216,6 +222,21 @@ const skillsDataObject: { [key in skillsEnum]: Skill } = {
     icon: <SiNeo4J />,
     label: 'Neo4j',
     color: '#0387f7',
+  },
+  kubernetes: {
+    icon: <SiKubernetes />,
+    label: 'Kubernetes',
+    color: '#326ce5',
+  },
+  gitlab: {
+    icon: <SiGitlab />,
+    label: 'GitLab',
+    color: '#fc6d26',
+  },
+  docker: {
+    icon: <SiDocker />,
+    label: 'Docker',
+    color: '#0db7ed',
   },
 };
 

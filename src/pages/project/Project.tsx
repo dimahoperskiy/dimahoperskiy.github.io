@@ -117,6 +117,26 @@ const Project: React.FC = () => {
         skillsDataObject.css,
       ];
       break;
+    case ProjectUrls.worldQuiz:
+      label = t('World Quiz');
+      descriptionMessageId = 'worldQuizDescription';
+      sourceCodeUrl = 'https://github.com/dimahoperskiy/quiz-repo/';
+      iFrameUrl = 'https://dimahoperskiy.github.io/quiz-repo';
+      skills = [
+        skillsDataObject.react,
+        skillsDataObject.openLayers,
+        skillsDataObject.mui,
+        skillsDataObject.tailwind,
+        skillsDataObject.kubernetes,
+        skillsDataObject.express,
+        skillsDataObject.gitlab,
+        skillsDataObject.docker,
+        skillsDataObject.typeScript,
+        skillsDataObject.html,
+        skillsDataObject.css,
+        skillsDataObject.vite,
+      ];
+      break;
     default:
       return <Navigate to='/' />;
   }

@@ -96,8 +96,10 @@ export const MobileTechStackSpace = styled(TechStackSpace)`
 export const SourceButtonDesktop = styled(Button)`
   display: flex;
   align-items: center;
-  position: absolute;
+  width: fit-content;
   bottom: 15px;
+  position: static;
+  margin-top: 10px;
 `;
 
 export const SourceButtonMobile = styled(Button)`

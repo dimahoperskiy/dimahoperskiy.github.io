@@ -61,6 +61,8 @@ const skillsData: Skill[] = [
   skillsDataObject.tailwind,
   skillsDataObject.vite,
   skillsDataObject.i18next,
+  skillsDataObject.docker,
+  skillsDataObject.gitlab,
 ];
 
 const rareSkillsData: Skill[] = [
@@ -76,6 +78,7 @@ const rareSkillsData: Skill[] = [
   skillsDataObject.linux,
   skillsDataObject.firebase,
   skillsDataObject.neo4j,
+  skillsDataObject.kubernetes,
 ];
 
 type AboutSectionProps = {

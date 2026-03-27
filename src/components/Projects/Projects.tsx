@@ -4,6 +4,7 @@ import solarImg from 'assets/projectImages/solar-system.png';
 import flightsImg from 'assets/projectImages/flights-monitoring.png';
 import richbeeImg from 'assets/projectImages/richbee.png';
 import solutionCupImg from 'assets/projectImages/solution-cup.png';
+import worldQuizImg from 'assets/projectImages/world-quiz.png';
 import meSittingImg from 'assets/meSitting.png';
 import { Link } from 'react-router-dom';
 import {
@@ -75,14 +76,14 @@ const ProjectCard = ({
 
 const projectsData: ProjectCardProps[] = [
   {
-    url: 'flights-monitoring',
-    title: 'Flights monitoring',
+    url: 'world-quiz',
+    title: 'World Quiz',
     description:
-      'React + OpenLayers Web-application to monitor flights in real time',
-    imageSrc: flightsImg,
+      'Interactive world map on React and OpenLayers: learning mode and quiz to find countries on the map, with results saved in the browser.',
+    imageSrc: worldQuizImg,
     tagLabel: 'Live demo',
     contrast: true,
-    year: 2023,
+    year: 2025,
   },
   {
     url: 'solar-system',
@@ -93,6 +94,24 @@ const projectsData: ProjectCardProps[] = [
     year: 2022,
   },
   {
+    url: 'richbee-shows',
+    title: 'Richbee Shows',
+    description: 'React app using IMDb API to find info about films or series',
+    imageSrc: richbeeImg,
+    tagLabel: 'Live demo',
+    year: 2021,
+  },
+  {
+    url: 'flights-monitoring',
+    title: 'Flights monitoring',
+    description:
+      'React + OpenLayers Web-application to monitor flights in real time',
+    imageSrc: flightsImg,
+    tagLabel: 'Live demo',
+    contrast: true,
+    year: 2023,
+  },
+  {
     url: 'solution-cup',
     title: 'IT’s Tinkoff Solution Cup',
     description:
@@ -101,14 +120,6 @@ const projectsData: ProjectCardProps[] = [
     tagLabel: 'Live demo',
     contrast: true,
     year: 2023,
-  },
-  {
-    url: 'richbee-shows',
-    title: 'Richbee Shows',
-    description: 'React app using IMDb API to find info about films or series',
-    imageSrc: richbeeImg,
-    tagLabel: 'Live demo',
-    year: 2021,
   },
 ];
 
