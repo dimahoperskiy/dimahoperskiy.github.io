@@ -113,11 +113,11 @@ const Experience: React.FC = () => {
   const workExperienceTimelineItems: TimelineItemProps[] = [
     TimeLineItem(
       t('Freelance'),
-      getShortDate(2019, 11, 1),
-      getShortDate(2021, 4, 1),
+      getShortDate(2021, 3, 1),
+      getShortDate(2021, 5, 1),
       t('freelanceDescription'),
-      calculateYearsAndMonths('2019-11-01', '2021-04-01').years,
-      calculateYearsAndMonths('2019-11-01', '2021-04-01').months,
+      calculateYearsAndMonths('2021-03-01', '2021-05-01').years,
+      calculateYearsAndMonths('2021-03-01', '2021-05-01').months,
     ),
     TimeLineItem(
       t('Gusi-Lebedi'),
@@ -162,11 +162,11 @@ const Experience: React.FC = () => {
           <SectionTitle level={1}>{t('Work experience')}</SectionTitle>
           <TotalTime
             totalYears={
-              calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
+              calculateYearsAndMonths('2021-03-01', getCurrentDateFormatted())
                 .years
             }
             totalMonths={
-              calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
+              calculateYearsAndMonths('2021-03-01', getCurrentDateFormatted())
                 .months
             }
             title
@@ -181,11 +181,11 @@ const Experience: React.FC = () => {
         <SectionTitle level={1}>{t('Work experience')}</SectionTitle>
         <TotalTime
           totalYears={
-            calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
+            calculateYearsAndMonths('2021-03-01', getCurrentDateFormatted())
               .years
           }
           totalMonths={
-            calculateYearsAndMonths('2019-11-01', getCurrentDateFormatted())
+            calculateYearsAndMonths('2021-03-01', getCurrentDateFormatted())
               .months
           }
           title

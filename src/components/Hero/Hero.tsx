@@ -40,7 +40,7 @@ const Hero: React.FC<HeroSectionProps> = ({ aboutSectionRef }) => {
         <InfoTextWrapper>
           <HeroSubtitle level={2}>{t('Hi, I am')}</HeroSubtitle>
           <HeroName level={1}>{t('Dmitrii Khoperskii')}</HeroName>
-          <HeroRole level={4}>{t('Front-end Developer')}</HeroRole>
+          <HeroRole level={4}>{t('Frontend Developer')}</HeroRole>
           <ButtonsSpace size='middle'>
             <Button
               target='_blank'
