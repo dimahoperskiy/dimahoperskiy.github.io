@@ -1,9 +1,8 @@
 import React from 'react';
 import meImg from '../../assets/meUpdated.png';
 import { useTranslation } from 'react-i18next';
-import { SiGithub, SiGmail, SiTelegram } from 'react-icons/si';
+import { SiGithub, SiGmail, SiTelegram, SiLinkedin } from 'react-icons/si';
 import { Button } from 'antd';
-import HHIconImg from 'assets/hhlogo.png';
 import {
   Wrapper,
   AvatarBox,
@@ -15,7 +14,6 @@ import {
   HeroRole,
   ButtonsSpace,
   Arrow,
-  HHIcon,
 } from './Hero.styles';
 
 type HeroSectionProps = {
@@ -62,9 +60,9 @@ const Hero: React.FC<HeroSectionProps> = ({ aboutSectionRef }) => {
             />
             <Button
               target='_blank'
-              href='https://hh.ru/resume/fdb658e3ff0b96263a0039ed1f794964466775'
+              href='https://www.linkedin.com/in/dimahoperskiy/'
               size='large'
-              icon={<HHIcon src={HHIconImg} />}
+              icon={<SiLinkedin />}
             />
           </ButtonsSpace>
         </InfoTextWrapper>
